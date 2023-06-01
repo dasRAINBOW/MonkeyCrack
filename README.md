@@ -1,7 +1,8 @@
 # MonkeyCrack
 This scirpt allows you to cheat on the website called [MonkeyType](https://monkeytype.com).
 # Disclaimer
-Idk if its safe to use.
+Idk if its safe to use. <br>
+Make sure to enable keyboard with QUERTZ layout and no number row (otherwise it won't work).
 # How to setup
 To use it you need [python](python.org) and [tesseract](https://tesseract-ocr.github.io) so install it. <br>
 After you installed python you need to open the command prompt in the folder and type: <br>
