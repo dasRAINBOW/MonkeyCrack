@@ -4,11 +4,14 @@ import numpy
 import pytesseract
 import pyautogui
 from time import sleep
+from keyboard import is_pressed
 
 pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 
 def main():
     global mon
+    global left
+    global top
     sleep(3)
     with mss.mss() as sct:
         while True:
@@ -18,8 +21,18 @@ def main():
             text = text.replace("\n", " ")
 
             pyautogui.typewrite(text + " ", 0.01)
-            mon = {'top': 415, 'left': 375, 'width': 1200, 'height': 110}
+            top1 = top + 95
+            mon = {'top': top1, 'left': left, 'width': 1200, 'height': 110}
+            if is_pressed('q'):
+                idk = 0
+                print("Bye.")
+                print(len(idk))
 
 input("Press Enter to start")
-mon = {'top': 360, 'left': 375, 'width': 1200, 'height': 110}
+left = pyautogui.locateOnScreen('eng.png', confidence=0.8)[0]
+top = pyautogui.locateOnScreen('eng.png', confidence=0.8)[1]
+left -= 535
+top1 = top + 40
+mon = {'top': top1, 'left': left, 'width': 1200, 'height': 110}
+print(mon)
 main()
