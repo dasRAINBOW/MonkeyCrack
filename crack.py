@@ -1,4 +1,3 @@
-import cv2
 import mss
 import numpy
 import pytesseract
@@ -29,10 +28,9 @@ def main():
                 print(len(idk))
 
 input("Press Enter to start")
-left = pyautogui.locateOnScreen('eng.png', confidence=0.8)[0]
-top = pyautogui.locateOnScreen('eng.png', confidence=0.8)[1]
+left = pyautogui.locateOnScreen('eng.png', confidence=0.8, grayscale=True)[0]
+top = pyautogui.locateOnScreen('eng.png', confidence=0.8, grayscale=True)[1]
 left -= 535
 top1 = top + 40
 mon = {'top': top1, 'left': left, 'width': 1200, 'height': 110}
-print(mon)
 main()
